@@ -1,0 +1,9 @@
+const clients = require("../../models/clientSchema")
+
+const addclient = async (req,res) => {
+  const { name, username, email, status, role, phonenumber } = req.body;
+  const user = await clients.create({name, username, email, status, role, phonenumber})
+  res.json(user)
+};
+
+module.exports = addclient
